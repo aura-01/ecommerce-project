@@ -10,6 +10,8 @@ import EditProduct from './pages/EditProduct';
 import ProductDetails from './pages/ProductDetails';
 import Cart from './pages/Cart';
 import Orders from './pages/Orders';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import PrivateRoute from './components/PrivateRoute';
 
 export default function App() {
   return (
@@ -17,16 +19,22 @@ export default function App() {
       <Nav />
       <div className="container">
         <Routes>
+          {/* Public Routes */}
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/products" element={<ProductList />} />
-          <Route path="/products/add" element={<AddProduct />} />
-          <Route path="/products/edit/:id" element={<EditProduct />} />
-          <Route path="/products/:id" element={<ProductDetails />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/orders" element={<Orders />} />
-          <Route path="/" element={<Dashboard />} />
+          
+          {/* Homepage Redirect */}
+          <Route path="/" element={<Navigate replace to="/dashboard" />} />
+
+          {/* Protected Routes */}
+          <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
+          <Route path="/products" element={<PrivateRoute><ProductList /></PrivateRoute>} />
+          <Route path="/products/add" element={<PrivateRoute><AddProduct /></PrivateRoute>} />
+          <Route path="/products/edit/:id" element={<PrivateRoute><EditProduct /></PrivateRoute>} />
+          <Route path="/products/:id" element={<PrivateRoute><ProductDetails /></PrivateRoute>} />
+          <Route path="/cart" element={<PrivateRoute><Cart /></PrivateRoute>} />
+          <Route path="/orders" element={<PrivateRoute><Orders /></PrivateRoute>} />
+
         </Routes>
       </div>
     </Router>
