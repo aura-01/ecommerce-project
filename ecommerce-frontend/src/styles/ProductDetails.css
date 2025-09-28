@@ -1,0 +1,17 @@
+.card {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 16px;
+}
+
+.card h2 {
+  margin-bottom: 12px;
+}
+
+.card p {
+  margin-bottom: 8px;
+}
+
+button {
+  margin-top: 12px;
+}

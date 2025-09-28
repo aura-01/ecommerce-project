@@ -1,0 +1,30 @@
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 16px;
+}
+
+.cart-table th, .cart-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-table tr:hover {
+  background: #f8f9fa;
+}
+
+button {
+  margin: 0 4px;
+  background: #17a2b8;
+}
+
+button:hover {
+  background: #117a8b;
+}
+
+.total {
+  text-align: right;
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 16px;
+}

@@ -1,0 +1,20 @@
+.dashboard-cards {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.dashboard-cards .card {
+  flex: 1;
+  text-align: center;
+}
+
+.dashboard-cards .card div {
+  margin-bottom: 8px;
+}
+
+.dashboard-cards .card div:nth-child(2) {
+  font-size: 28px;
+  font-weight: 700;
+  color: #007bff;
+}

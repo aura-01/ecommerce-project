@@ -1,0 +1,34 @@
+.nav-bar {
+  background: white;
+  padding: 12px 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.nav-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-left a {
+  margin-right: 16px;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.nav-right button {
+  background: #eee;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: black;
+}
