@@ -11,6 +11,7 @@ import Cart from './pages/Cart';
 import Orders from './pages/Orders';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import PrivateRoute from './components/PrivateRoute';
+import './styles/App.css';
 
 export default function App() {
   return (

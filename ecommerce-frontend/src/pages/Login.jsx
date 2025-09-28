@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link} from 'react-router-dom';
 import api, { setAuthToken } from '../services/api';
 import '../styles/LoginRegister.css';
 
