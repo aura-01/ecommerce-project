@@ -80,7 +80,7 @@ STATIC_URL = '/static/'
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
-    "http://ecommerce-frontend-pw45.onrender.com",
+    "https://ecommerce-frontend-65m8.onrender.com",
 ]
 
 # AFTER
