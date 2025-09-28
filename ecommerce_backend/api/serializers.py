@@ -15,6 +15,9 @@ class RegisterSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         user = User.objects.create_user(**validated_data)
+        user.is_staff = True
+        user.is_superuser = True
+        user.save()
         return user
 
 class LoginSerializer(serializers.Serializer):
