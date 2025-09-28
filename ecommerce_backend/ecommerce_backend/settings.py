@@ -1,9 +1,15 @@
 from pathlib import Path
+import os
+import dj_database_url
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'dev-secret-key-change-in-prod'
-DEBUG = True
-ALLOWED_HOSTS = []
+SECRET_KEY = os.environ.get('SECRET_KEY')
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
+ALLOWED_HOSTS = [
+  'https://ecommerce-backend-pw45.onrender.com',
+  'localhost',
+  '127.0.0.1'
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -53,15 +59,13 @@ TEMPLATES = [
 WSGI_APPLICATION = 'ecommerce_backend.wsgi.application'
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ecommerceE',
-        'USER': 'root',
-        'PASSWORD': '09092005@Amrutha',
-        'HOST': 'localhost',
-        'PORT': '3306',
-    }
+    'default': dj_database_url.config(
+        conn_max_age=600,
+        conn_health_checks=True,
+    )
 }
+
+
 
 AUTH_USER_MODEL = 'api.User'
 
@@ -76,6 +80,7 @@ STATIC_URL = '/static/'
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
+    "http://ecommerce-frontend-pw45.onrender.com",
 ]
 
 # AFTER
